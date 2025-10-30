@@ -1,0 +1,33 @@
+@media (max-width: 855px) {
+    .parentTop {
+        display: none;
+    }
+
+    .head {
+        padding: 0rem 2rem;
+    }
+
+    .navbar ul {
+        list-style: none;
+        /* bullets hata do */
+        display: flex;
+        /* side by side */
+        justify-content: center;
+        /* center me align */
+        gap: 20px;
+        /* items ke beech space */
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+@media (max-width:768px) {
+    .menu-toggle {
+        display: flex;
+        font-size: 30px;
+    }
+    .underHead{
+        display: none;
+    }
+}

@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Ddsgnr Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        /* Universal Reset and General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background-color: #f8f8f8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ------------------ 1. Top Bar Styling ------------------ */
+        .top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10%; /* Desktop Padding */
+            border-bottom: 1px solid #ccc;
+            font-size: 14px;
+            color: #555;
+            background-color: white;
+        }
+
+        .top-info span {
+            margin-right: 15px;
+        }
+
+        .separator {
+            color: #ccc;
+        }
+
+        .social-icons a {
+            margin-left: 15px;
+            color: #333;
+        }
+
+        /* ------------------ 2. Navigation Bar Styling ------------------ */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 10%;
+            background-color: white;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            color: #00d2b3; /* Cyan/Teal color */
+            font-size: 35px;
+            margin-right: 5px;
+            line-height: 0.5;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 25px;
+        }
+
+        .nav-links li a {
+            padding: 15px 0;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .nav-links li a:hover,
+        .nav-links li a.active {
+            color: #00d2b3;
+            border-bottom: 2px solid #00d2b3;
+        }
+
+        /* Buttons Styling */
+        .btn {
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            border: 2px solid;
+            transition: all 0.3s;
+            text-align: center; /* For mobile view */
+        }
+
+        .btn-login {
+            border-color: #333;
+            color: #333;
+            background-color: transparent;
+            border-bottom: none !important;
+        }
+
+        .btn-login:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        .btn-signup {
+            border-color: black;
+            color: white;
+            background-color: black;
+            border-bottom: none !important;
+            margin-left: 10px;
+        }
+
+        .btn-signup:hover {
+            background-color: #00d2b3;
+            border-color: #00d2b3;
+        }
+
+        /* Hide Hamburger Menu by default on Desktop */
+        .menu-toggle {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+        }
+
+        /* ------------------ 3. RESPONSIVE DESIGN (Mobile View) ------------------ */
+        @media (max-width: 900px) {
+
+            .top-bar {
+                display: none; /* Top bar will disappear on small screens */
+            }
+            
+            .navbar {
+                padding: 10px 5%; 
+                position: relative; /* Menu ko sahi jagah rakhne ke liye */
+            }
+
+            /* Show Hamburger Icon */
+            .menu-toggle {
+                display: block; 
+                color: #333;
+            }
+
+            /* Hide and Style Navigation Links for Mobile */
+            .nav-links {
+                display: none; /* Initial state: hidden */
+                flex-direction: column;
+                position: absolute;
+                top: 60px; 
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                z-index: 10;
+                padding-bottom: 20px;
+            }
+            
+            /* Class to display the menu when the toggle is clicked */
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0;
+                width: 100%;
+                border-top: 1px solid #eee;
+                padding: 10px 0;
+            }
+
+            .nav-links li:first-child {
+                border-top: none;
+            }
+
+            .nav-links li a {
+                display: block;
+                padding: 10px 20px;
+                border-bottom: none !important;
+            }
+            
+            /* Mobile button adjustment */
+            .btn-signup {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        
+        <div class="top-bar">
+            <div class="top-info">
+                <span>Phone Number: 956 742 455 678</span>
+                <span class="separator">|</span>
+                <span>Email:info@ddsgnr.com</span>
+            </div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+        </div>
+        
+        <nav class="navbar">
+            <div class="logo">
+                <span class="logo-icon">◿</span> 
+                Ddsgnr
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Achievement</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Testimonial</a></li>
+                <li><a href="#" class="btn btn-login">Login</a></li>
+                <li><a href="#" class="btn btn-signup">Sign Up</a></li>
+            </ul>
+
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+
+    </header>
+
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const navLinks = document.getElementById('nav-links');
+            
+            // Toggling the 'active' class to show/hide the menu
+            navLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>

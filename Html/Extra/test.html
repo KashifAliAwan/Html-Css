@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #fff;
+        }
+
+        /* 🔹 Hero Section Container */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 60px 80px;
+            min-height: 90vh;
+        }
+
+        /* 🔹 Left Side Content */
+        .hero-content {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            color: #333;
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* 🔹 Buttons */
+        .buttons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            font-size: 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            border: 1px solid #000;
+            transition: all 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #333;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: #000;
+        }
+
+        .btn-outline:hover {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* 🔹 Right Side Image */
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* 🔹 Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px 20px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image {
+                margin-top: 30px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .hero-content p {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🔹 Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Learn new skills<br>online with ease</h1>
+            <p>
+                Discover a wide range of courses covering a variety of subjects,
+                taught by expert instructors.
+            </p>
+            <div class="buttons">
+                <button class="btn btn-primary">Start learning now</button>
+                <button class="btn btn-outline">Explore Courses</button>
+            </div>
+        </div>
+
+        <div class="hero-image">
+            <img src="assets/hero-image.png" alt="Student Image">
+        </div>
+    </section>
+
+</body>
+
+</html>
